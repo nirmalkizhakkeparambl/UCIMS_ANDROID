@@ -1,0 +1,1769 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SQLite.Edit_Sql">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:elevation="1dp"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="108dp"
+            android:layout_height="89dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/andhraseal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="90dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DIRECTORATE OF TOWN AND COUNTRY PLANNING"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/escrollview">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Submitted by"
+                        android:textSize="18sp"
+                        android:id="@+id/edraftsman12"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/mm"
+                        android:layout_marginLeft="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name\n"
+                    android:textSize="18sp"
+                    android:id="@+id/edraftsman"
+                    android:textColor="@color/formcolor"
+                    android:fontFamily="@font/mm"
+                    android:layout_marginLeft="15dp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Type of Unauthorised Construction\n"
+                    android:textSize="18sp"
+                    android:id="@+id/edraftsman1"
+                    android:textColor="@color/formcolor"
+                    android:fontFamily="@font/mm"
+                    />
+
+
+            </LinearLayout>
+
+
+
+            <Spinner
+                android:id="@+id/enatureofconst"
+                android:background="@drawable/spinner_background"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:entries="@array/Option"
+                android:padding="15sp" />
+
+            <Spinner
+                android:background="@drawable/spinner_background"
+                android:id="@+id/total_uc"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:entries="@array/total_uc"
+                android:layout_marginTop="10dp"/>
+
+            <Spinner
+                android:id="@+id/constructionStage"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/spinner_background"
+                android:entries="@array/constructionStages" />
+
+            <LinearLayout
+                android:id="@+id/checkboxLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/noDeviationCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Deviation"/>
+
+                    <CheckBox
+                        android:id="@+id/setbacksCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setbacks"
+                        android:layout_toRightOf="@id/allDeviationCB"/>
+
+                    <CheckBox
+                        android:id="@+id/roadWindingCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Road winding"
+                        android:layout_toRightOf="@id/noDeviationCB"/>
+
+                    <CheckBox
+                        android:id="@+id/parkingCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parking"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <CheckBox
+                        android:id="@+id/allDeviationCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All deviation" />
+
+                    <CheckBox
+                        android:id="@+id/additionalFloorsCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Additional floors"/>
+
+                    <CheckBox
+                        android:id="@+id/buildupAreaCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buildup area"
+                        android:layout_toRightOf="@id/allDeviationCB"/>
+
+                    <CheckBox
+                        android:id="@+id/landMisuseCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Land Misuse"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Name of Owner *"
+                app:maxCharacters="50"
+                android:id="@+id/eownerTexfield"
+                android:layout_marginTop="15dp">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:singleLine="true"
+                    android:id="@+id/eowner" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Name of Father/Husband *"
+                android:id="@+id/efathernameTexfield"
+                android:layout_marginTop="10dp"
+                app:maxCharacters="25">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:singleLine="true"
+                    android:id="@+id/efathername" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                app:labelText="Address for Communication *"
+                android:id="@+id/eaddressTexfield"
+                app:maxCharacters="50">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/eaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789/-"
+                    android:singleLine="true"/>
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                app:labelText="Age *"
+                android:id="@+id/userage"
+                app:maxCharacters="2">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:singleLine="true"/>
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mm"
+                android:paddingTop="10dp"
+                android:text="Location of the Construction *"
+                android:textColor="@color/formcolor"
+                android:textSize="20sp">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    app:labelText="District">
+
+                    <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                        android:id="@+id/edistrict"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789/-"
+                        android:singleLine="true"/>
+                </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+                <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    app:labelText="ULB *">
+
+                    <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                        android:id="@+id/emunicipality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789/-"
+                        android:singleLine="true"/>
+                </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            </LinearLayout>
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/esurveynoTexfield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:labelText="Survey No./TS No. *"
+                app:maxCharacters="25">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/esurveyno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 1234567890/-,.![]{}()=+_*"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:singleLine="true"/>
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mandal: "
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/formcolor"/>
+
+                <Spinner
+                    android:id="@+id/mandalSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/villageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Village: "
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/formcolor"/>
+
+                <Spinner
+                    android:id="@+id/villageSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                android:id="@+id/evillageTexfield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Village/Town"
+                app:maxCharacters="20"
+                android:layout_marginTop="16dp">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/evillage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz /-.![]{}()=+_*"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:singleLine="true" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Door No./Flat No. *"
+                android:id="@+id/edoornoTexfield"
+                app:maxCharacters="20"
+                android:layout_marginTop="15dp">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/edoorno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 1234567890/-.[]{}()=+_*"
+                    android:inputType="textPostalAddress"
+                    android:singleLine="true" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Locality/Colony *"
+                android:id="@+id/elocalityTexfield"
+                app:maxCharacters="20"
+                android:layout_marginTop="10dp">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/elocality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789"
+                    android:inputType="text"
+                    android:singleLine="true"/>
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Street Name/Number *"
+                android:id="@+id/estreetnameTexfield"
+                app:maxCharacters="20">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/estreetname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789"
+                    android:singleLine="true" />
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/esiteareaTexfield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:labelText="Site Area(Square Meters) *"
+                app:maxCharacters="6">
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/esitearea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:digits="0123456789."
+                    android:singleLine="true"/>
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/eexpandable_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:el_duration="1000"
+                app:el_expanded="true"
+                app:el_parallax="0.5">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linearlayout_update"
+                    >
+                    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:labelText="Approved Plan *"
+                        android:id="@+id/eapprovedplanTexfield"
+                        app:maxCharacters="35"
+                        android:layout_marginTop="10dp">
+                        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789 /"
+                            android:singleLine="true"
+                            android:id="@+id/eapprovedplan" />
+                    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+                    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                        android:id="@+id/date_tf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:labelText="Approved Plan Date *">
+
+                        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                            android:id="@+id/date_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"/>
+
+                    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+                    <TextView
+                        android:id="@+id/violationDeviation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Violation/Deviation(In Meters)"
+                        android:textSize="20sp"
+                        android:textColor="@color/formcolor"
+                        android:fontFamily="@font/mm" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="5dp">
+                        <TextView
+                            android:id="@+id/asperTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="As per Plan"
+                            android:textSize="18sp"
+                            android:layout_alignParentLeft="true"
+                            android:textColor="@color/formcolor"
+                            android:fontFamily="@font/mm"
+
+                            />
+                        <TextView
+                            android:id="@+id/asperTV2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="As Constructed"
+                            android:layout_marginRight="10dp"
+                            android:textColor="@color/formcolor"
+                            android:fontFamily="@font/mm"
+                            android:textSize="18sp"
+
+                            />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Front (meters) *"
+                            android:id="@+id/efront1Texfield"
+                            android:layout_alignParentLeft="true"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/efront1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890."
+                                android:singleLine="true"/>
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Front (meters) *"
+                            android:id="@+id/efront2Texfield"
+                            app:maxCharacters="6"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890."
+                                android:singleLine="true"
+                                android:id="@+id/efront2" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Side 1 (meters) *"
+                            android:id="@+id/eright1Texfield"
+                            app:maxCharacters="6"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/eright1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890."
+                                android:singleLine="true"/>
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Side 1 (meters) *"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/eright2Texfield"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890."
+                                android:singleLine="true"
+                                android:id="@+id/eright2" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Side 2 (meters) *"
+                            android:layout_alignParentLeft="true"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/eleft1Texfield">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/eleft1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890."
+                                android:singleLine="true"/>
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Side 2 (meters) *"
+                            android:layout_alignParentRight="true"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/eleft2Texfield">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890."
+                                android:singleLine="true"
+                                android:id="@+id/eleft2" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Rear (meters) *"
+                            app:maxCharacters="6"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/eback1Texfield"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/eback1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890."
+                                android:singleLine="true" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Rear (meters) *"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/eback2Texfield"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:digits="1234567890."
+                                android:layout_marginTop="10dp"
+                                android:singleLine="true"
+                                android:id="@+id/eback2" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Floor. *"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/efloor1Texfield"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/efloor1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:layout_marginTop="10dp"
+                                android:inputType="number"
+                                android:digits="1234567890"
+                                android:singleLine="true" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Floor. *"
+                            android:id="@+id/efloor2Texfield"
+                            android:layout_alignParentRight="true"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890"
+                                android:singleLine="true"
+                                android:id="@+id/efloor2" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Land use as per plan *"
+                            app:maxCharacters="15"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/eland1Texfield"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/elanduse1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:layout_marginTop="10dp"
+                                android:digits="aqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM 1234567890"
+                                android:singleLine="true"/>
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Landuse as per constructed *"
+                            android:id="@+id/elanduse2Texfield"
+                            app:maxCharacters="15"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:layout_marginTop="10dp"
+                                android:digits="aqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM 1234567890"
+                                android:singleLine="true"
+                                android:id="@+id/elanduse2" />
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Road Widening(sq mts) *"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/eroadwidening1Textfield"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/eroadwidening1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:layout_marginTop="10dp"
+                                android:inputType="numberDecimal"
+                                android:digits="0123456789."
+                                android:singleLine="true" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Road widening (sq mts) *"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/eroadwidening2Texfield"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:singleLine="true"
+                                android:digits="0123456789."
+                                android:id="@+id/eroadwidening2" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Parking (sq mts) *"
+                            android:id="@+id/eparking1Texfield"
+                            app:maxCharacters="6"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/eparking1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:digits="1234567890."
+                                android:singleLine="true"/>
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Parking (sq mts) *"
+                            android:id="@+id/eparking2Texfield"
+                            android:layout_alignParentRight="true"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:digits="1234567890."
+                                android:singleLine="true"
+                                android:id="@+id/eparking2" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Area(sq mts) *"
+                            android:id="@+id/earea1Textfield"
+                            android:layout_alignParentLeft="true"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:id="@+id/earea1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:layout_marginTop="10dp"
+                                android:inputType="numberDecimal"
+                                android:digits="0123456789."
+                                android:singleLine="true" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:labelText="Area (sq mts) *"
+                            android:id="@+id/earea2Texfield"
+                            android:layout_alignParentRight="true"
+                            app:maxCharacters="6"
+                            android:layout_marginTop="10dp">
+
+                            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:layout_marginTop="10dp"
+                                android:singleLine="true"
+                                android:digits="0123456789."
+                                android:id="@+id/earea2" />
+
+                        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                    </RelativeLayout>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/eexpandable_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:el_duration="1000"
+                app:el_expanded="true"
+                app:el_parallax="0.5">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    android:background="#D6D6D6"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="1. You Are Unauthorisedly Constructing"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/mm"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/eConstructionType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:layout_marginTop="10dp"
+                                android:entries="@array/Type" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mm"
+                                android:text="Building Ground  "
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:id="@+id/eConstructionFloors"
+                                android:layout_marginTop="10dp"
+                                android:entries="@array/floor" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="7dp"
+                                android:fontFamily="@font/mm"
+                                android:layout_marginTop="5dp"
+                                android:text=" floor with out  "
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/mm"
+                            android:text="Obtaining Permission from the Executive Authority"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mm"
+                            android:layout_marginTop="10dp"
+                            android:text="2. You Are Unauthorisedly Constructing"
+                            android:textSize="18sp"
+
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:id="@+id/eFloorsAsOnGround"
+                                android:layout_marginTop="10dp"
+                                android:entries="@array/Option1" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/mm"
+                                android:text="On The Existing  "
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:id="@+id/eNoOfFloors"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:entries="@array/Option2" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:fontFamily="@font/mm"
+                                android:layout_marginTop="10dp"
+                                android:text="without Obtaining "
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/mm"
+                            android:text="Proper Permission"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mm"
+                            android:text="3. You Are Unauthorisedly Converting existing"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="horizontal">
+
+                            <Spinner
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:id="@+id/eExistingFloors"
+                                android:layout_marginTop="10dp"
+                                android:entries="@array/Type" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mm"
+                                android:layout_marginTop="10dp"
+                                android:text="Building to  "
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:id="@+id/eConvertingFloors"
+                                android:layout_marginTop="10dp"
+                                android:entries="@array/Type" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Building without "
+                                android:fontFamily="@font/mm"
+                                android:textSize="18sp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="7dp"
+                                />
+
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="obtaining prior permission"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/mm"
+                            android:layout_marginLeft="15sp"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Phone Number."
+                android:id="@+id/ephonenumbertextfiled"
+                app:maxCharacters="10"
+                android:layout_marginTop="16dp">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    android:singleLine="true"
+                    android:id="@+id/ephonenumber" />
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Plinth area"
+                android:visibility="gone"
+                android:id="@+id/plintharea"
+                app:maxCharacters="7"
+                android:layout_marginTop="10dp">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:digits="0123456789"
+                    android:singleLine="true"
+                    android:id="@+id/etplintharea" />
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelText="Built up area "
+                android:visibility="gone"
+                android:id="@+id/plintharea_i"
+                app:maxCharacters="7"
+                android:layout_marginTop="10dp">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:digits="0123456789"
+                    android:singleLine="true"
+                    android:id="@+id/etplintharea_i" />
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_ucexpand1"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:background="@drawable/border"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mm"
+                    android:textColor="@color/formcolor"
+                    android:layout_marginTop="10dp"
+                    android:text="New Unauthorised Construction"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/mm"
+                        android:layout_marginLeft="2dp"
+                        android:text="Building Usage Type"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/ConstructionType"
+                        android:layout_width="230dp"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/Type"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mm"
+                        android:text="No. of floors"
+                        android:textSize="14sp"
+                        android:layout_gravity="center" />
+
+                    <Spinner
+                        android:layout_width="230dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/ConstructionFloors"
+                        android:entries="@array/floor1"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                android:padding="10dp"
+                android:background="@drawable/border"
+                android:id="@+id/total_ucexpand2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/mm"
+                    android:textColor="@color/formcolor"
+                    android:text="Unauthorised Construction on existing Building"
+                    android:textSize="18sp"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/mm"
+                        android:text="Building Usage Type"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:id="@+id/FloorsAsOnGround"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/Type" />
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mm"
+                        android:text="Exsiting No.of Floors"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:id="@+id/NoOfFloors1"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/floor" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mm"
+                        android:text="Unauthorised Construction"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:id="@+id/NoOfFloors"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/Option2" />
+
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                android:padding="10dp"
+                android:background="@drawable/border"
+                android:id="@+id/total_ucexpand3">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mm"
+                    android:text="Change in Usage of Building\n"
+                    android:textSize="18sp"
+                    android:textColor="@color/formcolor"
+                    android:layout_marginTop="10dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mm"
+                        android:text="Existing usage From"
+                        android:textSize="14sp"
+                        />
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:id="@+id/ExistingFloors"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/Type1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mm"
+                        android:text="To"
+                        android:textSize="14sp"
+                        android:layout_marginTop="10dp" />
+
+
+
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:id="@+id/ConvertingFloors"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/Type2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                android:padding="10dp"
+                android:background="@drawable/border"
+                android:id="@+id/total_ucexpand4">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mm"
+                    android:text="Stilt/Parking\n"
+                    android:textSize="18sp"
+                    android:textColor="@color/formcolor"
+                    android:layout_marginTop="10dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mm"
+                        android:text="Misusing of Stilt/Parking to"
+                        android:textSize="14sp"
+                        />
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:id="@+id/misusingofstiltparking"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/StiltParking" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="15sp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/elocationimage"
+                    android:src="@drawable/ic_my_location_black_24dp" />
+
+                <EditText
+                    android:id="@+id/eloc_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="5dp"
+                    android:fontFamily="@font/mm"
+                    android:background="@drawable/etroundcorner"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp"
+                    android:text="Location"/>
+
+                <ImageView
+                    android:id="@+id/edit_latlng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="5dp"
+                    android:src="@drawable/edit_dashboard"/>
+
+                <ImageView
+                    android:id="@+id/done_latlng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="5dp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_add_circle_black_24dp"/>
+
+            </LinearLayout>
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/eexpandable_layout_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:el_duration="1000"
+                app:el_expanded="true"
+                app:el_parallax="0.5">
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:paddingTop="10dp"
+                    tools:context=".SQLite.Edit_Sql">
+
+                    <fragment
+                        android:id="@+id/emap"
+                        android:name="com.gisfy.unauthorizedconstructions.Utils.WorkaroundMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:context=".SQLite.Edit_Sql"/>
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/marker"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="#8c000000"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="Minimum 3 points are required to draw a polygon then try to connect polygon\nPlease drag map to your address..\n*Long Press to clear points"
+                        android:textColor="#ffffff"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="connect polygon"
+                        android:onClick="connectPolygon"/>
+                </RelativeLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toggle Map"
+                android:visibility="gone"
+                android:onClick="eCloseMap"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Select Image"
+                android:textSize="15sp"
+                android:textColor="@color/formcolor"
+                android:fontFamily="@font/mm"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/eprofileimage"
+                    android:layout_width="80dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_account_circle_black_24dp"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#E9DEDE"
+                    android:onClick="eprofile"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/eimageView2"
+                    android:layout_width="80dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_account_circle_black_24dp"
+                    app:civ_border_width="2dp"
+                    android:layout_marginLeft="1dp"
+                    app:civ_border_color="#E9DEDE"
+                    android:onClick="image2"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/eimageview3"
+                    android:layout_width="80dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="1dp"
+                    android:src="@drawable/ic_account_circle_black_24dp"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#E9DEDE"
+                    android:onClick="image3"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/eimageview4"
+                    android:layout_width="80dp"
+                    android:layout_height="96dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_account_circle_black_24dp"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#E9DEDE"
+                    android:onClick="image4"/>
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="showvideo"
+                android:id="@+id/showvideo"
+                android:text="Show Video"/>
+            <VideoView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                android:id="@+id/video_view"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Video should be less than 30sec"
+                android:textColor="@color/A400red"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="1dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="5dp"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="record"
+                    android:text="Upload Video"/>
+            </androidx.cardview.widget.CardView>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UPDATE"
+                android:onClick="Update"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:background="@color/formcolor"
+                android:id="@+id/esubmit"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CAncel"
+                android:onClick="cancel"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:background="@color/formcolor"
+                android:id="@+id/ecancel"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

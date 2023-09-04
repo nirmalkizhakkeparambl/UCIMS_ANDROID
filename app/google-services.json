@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "876522800776",
+    "firebase_url": "https://unauthorized-constructions.firebaseio.com",
+    "project_id": "unauthorized-constructions",
+    "storage_bucket": "unauthorized-constructions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876522800776:android:fea19865fd35f27f30413d",
+        "android_client_info": {
+          "package_name": "com.gisfy.unauthorizedconstructions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876522800776-k9l9p9a9svqlmb9gihu5ktakl849gbq8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gisfy.unauthorizedconstructions",
+            "certificate_hash": "bf3d133b9e63b26a2acda272871be92f61508f40"
+          }
+        },
+        {
+          "client_id": "876522800776-d9466d5di9q4mcl4kuf62b5240u1k5pk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVtVs6ddb_uZz8VgUV3P280tN5zVHN2us"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876522800776-d9466d5di9q4mcl4kuf62b5240u1k5pk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
