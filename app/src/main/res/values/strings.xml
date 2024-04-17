@@ -230,11 +230,20 @@
 
     <string-array name="constructionStages">
         <item>Select Construction Stage</item>
+        <item>Foundation Stage</item>
+        <item>Footings Stage</item>
         <item>Plinth</item>
-        <item>Footings</item>
         <item>Slab</item>
-        <item>Completed</item>
+        <item>Superstructure</item>
+        <item>Completed/Finishing Stage</item>
     </string-array>
+<!--    <string-array name="constructionStages">-->
+<!--        <item>Select Construction Stage</item>-->
+<!--        <item>Plinth</item>-->
+<!--        <item>Footings</item>-->
+<!--        <item>Slab</item>-->
+<!--        <item>Completed</item>-->
+<!--    </string-array>-->
 
     <string-array name="Type">
         <item>--Select--</item>
@@ -312,7 +321,6 @@
         <item>--Select--</item>
         <item>Ground</item>
         <item>Cellar</item>
-        <item>Ground</item>
         <item>Ground+1</item>
         <item>Ground+2</item>
         <item>Ground+3</item>

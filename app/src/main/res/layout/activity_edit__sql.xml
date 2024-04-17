@@ -1373,7 +1373,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/mm"
-                        android:text="Building Usage Type"
+                        android:text="Existing Building Usage"
                         android:textSize="14sp" />
 
                     <Spinner

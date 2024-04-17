@@ -256,7 +256,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
-                app:labelText="Building Owner Age *"
+                app:labelText="Age of the Building owner *"
                 app:maxCharacters="2">
 
                 <studio.carbonylgroup.textfieldboxes.ExtendedEditText
@@ -869,7 +869,7 @@
                                     android:layout_alignParentLeft="true"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginRight="10dp"
-                                    app:labelText="Land use as per Sanctioned *"
+                                    app:labelText="Land usage as per Sanctioned *"
                                     app:maxCharacters="15">
 
                                     <studio.carbonylgroup.textfieldboxes.ExtendedEditText
@@ -891,7 +891,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentRight="true"
                                     android:layout_marginTop="10dp"
-                                    app:labelText="Land use as per constructed. *"
+                                    app:labelText="Land usage as per constructed. *"
                                     app:maxCharacters="15">
 
                                     <studio.carbonylgroup.textfieldboxes.ExtendedEditText
@@ -1270,7 +1270,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/mm"
-                        android:text="Building Usage Type"
+                        android:text="Existing Building Usage"
                         android:textSize="14sp" />
 
                     <Spinner

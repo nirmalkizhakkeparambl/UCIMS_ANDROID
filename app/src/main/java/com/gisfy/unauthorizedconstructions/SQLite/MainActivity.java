@@ -227,8 +227,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         } else {
 
         }
-
-
         isUDA = grade.contains("UDA");
 
         if (isUDA) {
@@ -386,11 +384,24 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 if (isChecked) {
                     allDeviation.setChecked(false);
                     setbacks.setChecked(false);
-                    additionalFloors.setChecked(false);
                     roadWinding.setChecked(false);
                     buildup.setChecked(false);
                     parking.setChecked(false);
                     landMisuse.setChecked(false);
+
+                    allDeviation.setEnabled(false);
+                    setbacks.setEnabled(false);
+                    roadWinding.setEnabled(false);
+                    buildup.setEnabled(false);
+                    parking.setEnabled(false);
+                    landMisuse.setEnabled(false);
+                }else {
+                    allDeviation.setEnabled(true);
+                    setbacks.setEnabled(true);
+                    roadWinding.setEnabled(true);
+                    buildup.setEnabled(true);
+                    parking.setEnabled(true);
+                    landMisuse.setEnabled(true);
                 }
             }
         });
@@ -2033,7 +2044,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         voilationLayout.setVisibility(View.VISIBLE);
         asPerTV.setText("As per Plan");
         asPerTV2.setText("As on Ground");
-        violationDeviation.setText("Deviation (in meters)");
+        violationDeviation.setText("Technical Details");
         option11 = false;
         option12 = false;
         option21 = false;
@@ -2107,7 +2118,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         date.setText("");
         asPerTV.setText("As per Rule");
         asPerTV2.setText("As per Construction");
-        violationDeviation.setText("Violation (in meters)");
+        violationDeviation.setText("Technical Details");
     }
 
     private void buildAlertMessageNoGps() {

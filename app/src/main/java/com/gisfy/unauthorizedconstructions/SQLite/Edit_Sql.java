@@ -294,11 +294,24 @@ public class Edit_Sql extends AppCompatActivity implements OnMapReadyCallback, G
                 if(isChecked){
                     allDeviation.setChecked(false);
                     setbacks.setChecked(false);
-                    additionalFloors.setChecked(false);
                     roadWinding.setChecked(false);
                     buildup.setChecked(false);
                     parking.setChecked(false);
                     landMisuse.setChecked(false);
+
+                    allDeviation.setEnabled(false);
+                    setbacks.setEnabled(false);
+                    roadWinding.setEnabled(false);
+                    buildup.setEnabled(false);
+                    parking.setEnabled(false);
+                    landMisuse.setEnabled(false);
+                }else {
+                    allDeviation.setEnabled(true);
+                    setbacks.setEnabled(true);
+                    roadWinding.setEnabled(true);
+                    buildup.setEnabled(true);
+                    parking.setEnabled(true);
+                    landMisuse.setEnabled(true);
                 }
             }
         });
@@ -1007,7 +1020,7 @@ public class Edit_Sql extends AppCompatActivity implements OnMapReadyCallback, G
                     datetf.setVisibility(View.GONE);
                     asperTV.setText("As Per Rule");
                     asperTV2.setText("As per Construction");
-                    violationDeviation.setText("Violation (in meters)");
+                    violationDeviation.setText("Technical Details");
                     findViewById(R.id.eapprovedplanTexfield).setVisibility(View.GONE);
                     findViewById(R.id.date_tf).setVisibility(View.GONE);
 
@@ -1056,7 +1069,6 @@ public class Edit_Sql extends AppCompatActivity implements OnMapReadyCallback, G
     @Override
     protected void onStart() {
         super.onStart();
-
 
         final Calendar myCalendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener calender = new DatePickerDialog.OnDateSetListener() {
