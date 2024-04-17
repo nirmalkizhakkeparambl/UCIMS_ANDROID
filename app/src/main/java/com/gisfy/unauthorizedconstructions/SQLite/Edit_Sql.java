@@ -312,6 +312,7 @@ public class Edit_Sql extends AppCompatActivity implements OnMapReadyCallback, G
                     buildup.setEnabled(true);
                     parking.setEnabled(true);
                     landMisuse.setEnabled(true);
+                    /
                 }
             }
         });
